@@ -15,7 +15,8 @@ class Login:
         #Username
         self.username_text = Label(self.frame, text="Username :", fg="black", font=('arial', 13, 'bold'), bg='white')
         self.username_text.pack(pady=5)
-    
+
+        #username entry
         self.user_entry = Entry(self.frame, width=25, bg='white', font=('arial', 13, 'bold'))
         self.user_entry.pack(pady=5)
 
@@ -23,6 +24,7 @@ class Login:
         self.password_text = Label(self.frame, text="Password :", fg="black", font=('arial', 13, 'bold'))
         self.password_text.pack(pady=5)
         
+        #pasword entry
         self.pass_entry = Entry(self.frame, show='*', width=25, bg='white', font=('', 13))
         self.pass_entry.pack(pady=5)
         
