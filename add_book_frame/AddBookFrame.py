@@ -40,10 +40,8 @@ class AddBook:
 
         # Buttons to submit, exit, and go back
         self.submit_button = Button(self.add_book, text='Submit', command=self.submit_action)
-        self.exit_button = Button(self.add_book, text='Exit', command=window.quit)
         self.back_button = Button(self.add_book, text='Back', command='')  # hide add_book frame and show main frame
         self.submit_button.pack()
-        self.exit_button.pack()
         self.back_button.pack()
 
         # Pack the frame to the main window
