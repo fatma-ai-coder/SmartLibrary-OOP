@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from Login_main2 import Login
+from add_book_frame.AddBookFrame import AddBook
 
 
 def main():
@@ -17,7 +18,7 @@ def main():
 
     root.geometry(f"{window_width}x{window_height}+{int(x)}+{int(y)}")
     root.config(bg="white")
-    Login(root)
+    AddBook(root)
     root.title("Login")
     root.mainloop()
 

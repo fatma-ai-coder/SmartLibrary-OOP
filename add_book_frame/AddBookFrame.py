@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from book import Book
+from add_book_frame.book import Book
 
 
 class AddBook:
@@ -76,7 +76,7 @@ class AddBook:
         books_database = open('books.txt', 'a')
         books_database.write('\n')
         var = new_book.add_to_database()
-        books_database.write(var)
+        books_database.write(str(var))
         books_database.close()
 
         # Popup to confirm addition of the book to the database

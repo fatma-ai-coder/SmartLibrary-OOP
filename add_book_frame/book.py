@@ -1,4 +1,4 @@
-from library_item import LibraryItem
+from add_book_frame.library_item import LibraryItem
 
 
 class Book(LibraryItem):
@@ -21,7 +21,5 @@ class Book(LibraryItem):
         return super().__str__() + '\nISBN: ' + str(self.__isbn) + '\nAuthors: ' + str(self.__authors)
 
     def add_to_database(self):
-        data = "Title: " + self.get_title() + '\nGenre: ' + self.get_genre() + \
-               '\nIn Stock: ' + str(self.get_stock()) + '\nISBN: ' + str(self.__isbn) + '\nAuthors: ' + \
-               str(self.__authors)
+        data = [self.get_title(), self.get_genre(), self.get_stock(), self.__isbn, self.__authors]
         return data
