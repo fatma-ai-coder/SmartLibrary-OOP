@@ -33,12 +33,19 @@ class AddBook:
         # Empty labels to create a space between the entries and buttons for better appearance
         self.spacer = Label(self.add_book)
 
+        # Set the menu initially
+        self.menu = StringVar()
+        self.menu.set("Select Genre ...")
+        # Create a dropdown menu
+        self.genre_drop = OptionMenu(self.add_book, self.menu,
+                                     "Fantasy", "Science Fiction", "Horror", "Mystery", "Romance", "Nonfiction")
+
         # Packing the widgets in order of appearance
         self.notice.pack(pady=15)
         self.title_label.pack()
         self.title.pack()
         self.genre_label.pack()
-        self.genre.pack()
+        self.genre_drop.pack()
         self.isbn_label.pack()
         self.isbn.pack()
         self.authors_label.pack()
