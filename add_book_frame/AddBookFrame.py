@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-from add_book_frame.book import Book
+from add_book_frame.BookClass import Book
 
 
 class AddBook:
@@ -18,12 +18,14 @@ class AddBook:
         self.author2 = Entry(self.add_book, width=30)
         self.author3 = Entry(self.add_book, width=30)
         self.author4 = Entry(self.add_book, width=30)
+        self.stock = Entry(self.add_book, width=30)
 
         # Labels above the entry boxes
         self.title_label = Label(self.add_book, text='Title:')
         self.genre_label = Label(self.add_book, text='Genre:')
         self.isbn_label = Label(self.add_book, text='ISBN:')
         self.authors_label = Label(self.add_book, text='Author(s): (max. 4)')
+        self.stock_label = Label(self.add_book, text='Stock')
 
         # Packing the widgets in order of appearance
         self.title_label.pack()
@@ -37,8 +39,10 @@ class AddBook:
         self.author2.pack()
         self.author3.pack()
         self.author4.pack()
+        self.stock_label.pack()
+        self.stock.pack()
 
-        # Buttons to submit, exit, and go back
+        # Buttons to submit and go back
         self.submit_button = Button(self.add_book, text='Submit', command=self.submit_action)
         self.back_button = Button(self.add_book, text='Back', command='')  # hide add_book frame and show main frame
         self.submit_button.pack()
@@ -59,7 +63,7 @@ class AddBook:
                 temp.remove(i)
         authors_list = temp
 
-        # Check if the ISBN has a valid input
+        # Check if the ISBN entered by the user has a valid input
         u_isbn = self.isbn.get()
         try:
             u_isbn = int(u_isbn)
@@ -67,8 +71,16 @@ class AddBook:
             messagebox.showerror('Error', "Invalid ISBN, must be numerical value.")
             return
 
+        # Check if the stock entered by the user has a valid input
+        u_stock = self.stock.get()
+        try:
+            u_stock = int(u_stock)
+        except ValueError:
+            messagebox.showerror('Error', "Invalid stock, must be numerical value.")
+            return
+
         # Create a book object
-        new_book = Book(self.title.get(), self.genre.get(), u_isbn, authors_list)
+        new_book = Book(self.title.get(), self.genre.get(), u_isbn, authors_list, u_stock)
 
         # Write the book details in the text file
         books_database = open('books.txt', 'a')
@@ -88,4 +100,4 @@ class AddBook:
         self.author2.delete(0, END)
         self.author3.delete(0, END)
         self.author4.delete(0, END)
-
+        self.stock.delete(0, END)

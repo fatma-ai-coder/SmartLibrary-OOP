@@ -3,7 +3,7 @@ class LibraryItem:
     def __init__(self, title, genre):
         self.__title = title
         self.__genre = genre
-        self.__inStock = 0
+        self.__inStock = True
 
     def get_title(self):
         return self.__title
