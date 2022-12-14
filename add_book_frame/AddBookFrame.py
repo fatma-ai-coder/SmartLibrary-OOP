@@ -20,6 +20,9 @@ class AddBook:
         self.author4 = Entry(self.add_book, width=30)
         self.stock = Entry(self.add_book, width=30)
 
+        # Notice that all fields are mandatory
+        self.notice = Label(self.add_book, text='Please note that all fields are mandatory.')
+
         # Labels above the entry boxes
         self.title_label = Label(self.add_book, text='Title:')
         self.genre_label = Label(self.add_book, text='Genre:')
@@ -27,7 +30,11 @@ class AddBook:
         self.authors_label = Label(self.add_book, text='Author(s): (max. 4)')
         self.stock_label = Label(self.add_book, text='Stock')
 
+        # Empty labels to create a space between the entries and buttons for better appearance
+        self.spacer = Label(self.add_book)
+
         # Packing the widgets in order of appearance
+        self.notice.pack(pady=15)
         self.title_label.pack()
         self.title.pack()
         self.genre_label.pack()
@@ -41,6 +48,7 @@ class AddBook:
         self.author4.pack()
         self.stock_label.pack()
         self.stock.pack()
+        self.spacer.pack()
 
         # Buttons to submit and go back
         self.submit_button = Button(self.add_book, text='Submit', command=self.submit_action)
@@ -54,6 +62,12 @@ class AddBook:
 
     # The command when the "Submit" button is pressed
     def submit_action(self):
+
+        # Check that all fields are filled and nothing is empty
+        for x in (self.title.get(), self.genre.get(), self.isbn.get(), self.author1.get(), self.stock.get()):
+            if x == '':
+                messagebox.showerror('Error', 'Please fill all required fields.')
+                return
 
         # Iterate over the authors and add the non-empty variables to a list
         authors_list = [self.author1.get(), self.author2.get(), self.author3.get(), self.author4.get()]
