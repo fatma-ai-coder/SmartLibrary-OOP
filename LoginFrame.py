@@ -21,7 +21,7 @@ class Login:
         self.user_entry.pack(pady=5)
 
         #Password
-        self.password_text = Label(self.frame, text="Password :", fg="black", font=('arial', 13, 'bold'))
+        self.password_text = Label(self.frame, text="Password :", fg="black", font=('arial', 13, 'bold'), bg='white')
         self.password_text.pack(pady=5)
         
         #pasword entry
