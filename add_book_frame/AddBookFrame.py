@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from add_book_frame.BookClass import Book
+import json
 
 
 class AddBook:
@@ -8,37 +9,36 @@ class AddBook:
     # This starts once the class is called
     def __init__(self, window):
         # Frame details
-        self.add_book = Frame(window, width=400, height=400)
+        self.frame = Frame(window, width=400, height=400)
 
         # Entry boxes in variables
-        self.title = Entry(self.add_book, width=30)
-        self.genre = Entry(self.add_book, width=30)
-        self.isbn = Entry(self.add_book, width=30)
-        self.author1 = Entry(self.add_book, width=30)
-        self.author2 = Entry(self.add_book, width=30)
-        self.author3 = Entry(self.add_book, width=30)
-        self.author4 = Entry(self.add_book, width=30)
-        self.stock = Entry(self.add_book, width=30)
+        self.title = Entry(self.frame, width=30)
+        self.genre = Entry(self.frame, width=30)
+        self.isbn = Entry(self.frame, width=30)
+        self.author1 = Entry(self.frame, width=30)
+        self.author2 = Entry(self.frame, width=30)
+        self.author3 = Entry(self.frame, width=30)
+        self.author4 = Entry(self.frame, width=30)
+        self.stock = Entry(self.frame, width=30)
 
         # Notice that all fields are mandatory
-        self.notice = Label(self.add_book, text='Please note that all fields are mandatory.')
+        self.notice = Label(self.frame, text='Please note that all fields are mandatory.')
 
         # Labels above the entry boxes
-        self.title_label = Label(self.add_book, text='Title:')
-        self.genre_label = Label(self.add_book, text='Genre:')
-        self.isbn_label = Label(self.add_book, text='ISBN:')
-        self.authors_label = Label(self.add_book, text='Author(s): (max. 4)')
-        self.stock_label = Label(self.add_book, text='Stock')
+        self.title_label = Label(self.frame, text='Title:')
+        self.genre_label = Label(self.frame, text='Genre:')
+        self.isbn_label = Label(self.frame, text='ISBN:')
+        self.authors_label = Label(self.frame, text='Author(s): (max. 4)')
+        self.stock_label = Label(self.frame, text='Stock')
 
         # Empty labels to create a space between the entries and buttons for better appearance
-        self.spacer = Label(self.add_book)
+        self.spacer = Label(self.frame)
 
         # Set the menu initially
         self.menu = StringVar()
         self.menu.set("Select Genre ...")
         # Create a dropdown menu
-        self.genre_drop = OptionMenu(self.add_book, self.menu,
-                                     "Fantasy", "Science Fiction", "Horror", "Mystery", "Romance", "Nonfiction")
+        self.genre_drop = OptionMenu(self.frame, self.menu, "Fantasy", "Science Fiction", "Horror", "Mystery", "Romance", "Nonfiction")
 
         # Packing the widgets in order of appearance
         self.notice.pack(pady=15)
@@ -58,21 +58,21 @@ class AddBook:
         self.spacer.pack()
 
         # Buttons to submit and go back
-        self.submit_button = Button(self.add_book, text='Submit', command=self.submit_action)
-        self.back_button = Button(self.add_book, text='Back', command='')  # hide add_book frame and show main frame
+        self.submit_button = Button(self.frame, text='Submit', command=self.submit_action)
+        self.back_button = Button(self.frame, text='Back', command='')  # hide add_book frame and show main frame
         self.submit_button.pack()
         self.back_button.pack()
 
         # Pack the frame to the main window
-        self.add_book.pack()
+        self.frame.pack()
 
 
     # The command when the "Submit" button is pressed
     def submit_action(self):
 
         # Check that all fields are filled and nothing is empty
-        for x in (self.title.get(), self.genre.get(), self.isbn.get(), self.author1.get(), self.stock.get()):
-            if x == '':
+        for x in (self.title.get(), self.menu.get(), self.isbn.get(), self.author1.get(), self.stock.get()):
+            if x == '' or self.menu.get() == "Select Genre ...":
                 messagebox.showerror('Error', 'Please fill all required fields.')
                 return
 
@@ -88,6 +88,12 @@ class AddBook:
         u_isbn = self.isbn.get()
         try:
             u_isbn = int(u_isbn)
+            # store the number of digits in the isbn in digits
+            digits = len(str(u_isbn))
+            # check if the number of digits is either 10 or 13
+            if digits != 10 and digits != 13:
+                messagebox.showerror("Error", "Invalid ISBN, must be 10 or 13 digits.")
+                return
         except ValueError:
             messagebox.showerror('Error', "Invalid ISBN, must be numerical value.")
             return
@@ -96,18 +102,21 @@ class AddBook:
         u_stock = self.stock.get()
         try:
             u_stock = int(u_stock)
+            # check if the stock is less than 0
+            if u_stock < 0:
+                messagebox.showerror('Error', "Invalid stock, must be greater than 0")
         except ValueError:
             messagebox.showerror('Error', "Invalid stock, must be numerical value.")
             return
 
         # Create a book object
-        new_book = Book(self.title.get(), self.genre.get(), u_isbn, authors_list, u_stock)
+        new_book = Book(self.title.get(), self.menu.get(), u_isbn, authors_list, u_stock)
 
         # Write the book details in the text file
         books_database = open('books.txt', 'a')
         books_database.write('\n')
         var = new_book.add_to_database()
-        books_database.write(str(var))
+        books_database.write(json.dumps(var))
         books_database.close()
 
         # Popup to confirm addition of the book to the database
