@@ -24,7 +24,7 @@ class Book:
     def get_genre(self):
         return self.__genre
 
-    # method to return the details of the book organized in a list
+    # method to return the details of the book organized in a dictionary
     def add_to_database(self):
-        data = [self.get_title(), self.get_genre(), self.__isbn, self.__authors, self.get_stock()]
+        data = {"title" : self.get_title(), "genre" : self.get_genre(), "isbn" : self.get_isbn(), "authors" : self.get_authors(), "stock" : self.get_stock()}
         return data
