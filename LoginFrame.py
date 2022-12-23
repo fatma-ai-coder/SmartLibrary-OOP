@@ -3,9 +3,10 @@ from tkinter import messagebox
 
 class Login:
     #main page
-    def __init__(self, root):
+    def __init__(self, root, main):
         self.frame = Frame(root, width=150, height=200, bg="white")
-        self.frame.pack(pady=5)
+        self.main = main
+        self.root = root
 
 
         #login_page
@@ -29,14 +30,17 @@ class Login:
         self.pass_entry.pack(pady=5)
         
         #Login_verfy_button
-        Login_Button = Button(self.frame, text="Login",fg="black", font=('arial', 13, 'bold'),command=self.login_verfy)
-        Login_Button.pack(pady=5)
+        self.login_button = Button(self.frame, text="Login",fg="black", font=('arial', 13, 'bold'),command=self.login_verfy)
+        self.login_button.pack(pady=5)
 
 
     def login_verfy(self):
         if self.user_entry.get() == "admin" and self.pass_entry.get() == "admin":
             messagebox.showinfo("Login", "You have logged in successfully")
+            self.frame.pack_forget()
+            self.main.frame.pack()
+            self.root.title("Library System")
             
         else:
             messagebox.showerror("Error", "Login failed")
-    
+            

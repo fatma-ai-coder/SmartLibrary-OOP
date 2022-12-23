@@ -1,14 +1,12 @@
 from tkinter import *
-from tkinter import messagebox
 from LoginFrame import Login
-from add_book_frame.AddBookFrame import AddBook
-
+from MainMenu import MainMenu
 
 def main():
     root = Tk()
 
-    window_width = 310
-    window_height = 400
+    window_width = 600
+    window_height = 600
 
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
@@ -17,9 +15,17 @@ def main():
     y = (screen_height/2) - (window_height/2)
 
     root.geometry(f"{window_width}x{window_height}+{int(x)}+{int(y)}")
-    root.config(bg="white")
-    AddBook(root)
+    root.config(bg="pink")
+    
+    main_frame = MainMenu(root)
+    login_frame = Login(root, main_frame)
+    
     root.title("Login")
+    login_frame.frame.pack()
+    
+    
+    
+    
     root.mainloop()
-
+ 
 main()
