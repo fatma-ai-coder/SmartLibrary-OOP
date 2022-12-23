@@ -1,2 +1,11 @@
 {"title": "asdfghjk", "genre": "Horror", "isbn": 1234567890, "authors": ["bvhjbknm"], "stock": 7}
 {"title": "jhgjkjh;fx", "genre": "Mystery", "isbn": 9876543210, "authors": ["hzxgjchvb", "dxchvjb"], "stock": 4}
+{"title": "Harry Potter", "genre": "Fantasy", "isbn": 5243682929, "authors": ["J. K. Rowling"], "stock": 6}
+{"title": "gfyukg.", "genre": "Horror", "isbn": 2345678765432, "authors": ["awwesrdtfygu", "rfcfgb"], "stock": 7}
+{"title": "saasdfghbjkl", "genre": "Mystery", "isbn": 1234567890, "authors": ["xfdhdgjm"], "stock": 6}
+{"title": "hgzvfb", "genre": "Mystery", "isbn": 1234567654, "authors": ["jhzfgj"], "stock": 4}
+{"title": "asdfghj", "genre": "Fantasy", "isbn": 1346798063, "authors": ["kgjh"], "stock": 20}
+{"title": "hggkj", "genre": "Horror", "isbn": 6000700033, "authors": ["vjb"], "stock": 70}
+{"title": "dghhdn", "genre": "Romance", "isbn": 1425364685969, "authors": ["asdfghjgfd", "wefgh", "yugchvb", "bjk"], "stock": 36}
+{"title": "hello", "genre": "Mystery", "isbn": 4354657687, "authors": ["hey", "hi", "hello", "oy"], "stock": 80}
+{"title": "adfgjn", "genre": "Science Fiction", "isbn": 1325534657687, "authors": ["ajin"], "stock": 60}
