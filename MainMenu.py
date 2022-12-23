@@ -13,19 +13,19 @@ class MainMenu:
         self.root = root
         self.root.title("Library System")
 
-        self.add_book_button = Button(self.frame, text="Add Book", width=35, pady=10, command=self.change_add_book, bg="#ffc0ad", fg="#271c19")
+        self.add_book_button = Button(self.frame, text="Add Book", width=35, pady=10, command=self.change_add_book, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
         self.add_book_button.pack(ipadx=20, ipady=5, pady=10)
         
-        self.borrow_book_button = Button(self.frame, text="Borrow Book", width=35, pady=10, command=self.change_borrow, bg="#ffc0ad", fg="#271c19")
+        self.borrow_book_button = Button(self.frame, text="Borrow Book", width=35, pady=10, command=self.change_borrow, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
         self.borrow_book_button.pack(ipadx=20, ipady=5, pady=10)
         
-        self.return_button = Button(self.frame, text="Return Book", width=35, pady=10, command=self.change_return, bg="#ffc0ad", fg="#271c19")
+        self.return_button = Button(self.frame, text="Return Book", width=35, pady=10, command=self.change_return, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
         self.return_button.pack(ipadx=20, ipady=5, pady=10)
         
-        self.display_button = Button(self.frame, text="Display Book", command=self.change_display, width=35, pady=10, bg="#ffc0ad", fg="#271c19")
+        self.display_button = Button(self.frame, text="Display Book", command=self.change_display, width=35, pady=10, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
         self.display_button.pack(ipadx=20, ipady=5, pady=10)
         
-        self.exit_button = Button(self.frame, text="Exit", command=self.exit_funct, width=35, pady=10, bg="#ffc0ad", fg="#271c19")
+        self.exit_button = Button(self.frame, text="Exit", command=self.exit_funct, width=35, pady=10, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
         self.exit_button.pack(ipadx=20, ipady=5, pady=10)
         
         
