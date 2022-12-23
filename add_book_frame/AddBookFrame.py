@@ -7,9 +7,10 @@ import json
 class AddBook:
 
     # This starts once the class is called
-    def __init__(self, window):
+    def __init__(self, window, main):
         # Frame details
         self.frame = Frame(window, width=400, height=400)
+        self.main = main
 
         # Entry boxes in variables
         self.title = Entry(self.frame, width=30)
@@ -59,12 +60,13 @@ class AddBook:
 
         # Buttons to submit and go back
         self.submit_button = Button(self.frame, text='Submit', command=self.submit_action)
-        self.back_button = Button(self.frame, text='Back', command='')  # hide add_book frame and show main frame
+        self.back_button = Button(self.frame, text='Back', command=self.change_frame)  # hide add_book frame and show main frame
         self.submit_button.pack()
         self.back_button.pack()
 
-        # Pack the frame to the main window
-        self.frame.pack()
+    def change_frame(self):
+        self.frame.pack_forget()
+        self.main.pack()
 
 
     # The command when the "Submit" button is pressed
