@@ -43,16 +43,16 @@ class BorrowBook:
         self.cal.pack() 
         
 
-        self.return_date2 = Button(self.frame, text="Return Data", command=get_date, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        self.return_date2 = Button(self.frame, text="Return Data", command=get_date, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.return_date2.pack()
 
         self.return_date = Label(self.frame, text='Return Date ', bg="#55423d", fg="#fff3ec", font=("dubai", 10))
         self.return_date.pack(pady=10)
 
-        self.borrow = Button(self.frame, text= 'Borrow',width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        self.borrow = Button(self.frame, text= 'Borrow',width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.borrow.pack()
 
-        self.back_button = Button(self.frame, text="Back", command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        self.back_button = Button(self.frame, text="Back", command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.back_button.pack(pady=5)
         
     def change_frame(self):

@@ -19,7 +19,7 @@ class DisplayBooks:
         self.stock = Label(self.info_frame)
         self.space = Label(self.info_frame, bg="#55423d")
 
-        display_text = Label(self.frame, text="Here are the Books we have!!", font=('Dubai', 13), fg="#fffffe", bg="#55423d")
+        display_text = Label(self.frame, text="Here are the books we have!", font=('Dubai', 13), fg="#fffffe", bg="#55423d")
         display_text.pack(pady=5)
 
         file = open("Books.txt", "r")
@@ -40,10 +40,10 @@ class DisplayBooks:
         self.test_list.pack(side="left")
         scroll.config(command=self.test_list.yview)
 
-        dis_but = Button(self.frame, text="Enter", command=self.display_info, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        dis_but = Button(self.frame, text="Enter", command=self.display_info, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         dis_but.pack(pady=5)
 
-        back_button = Button(self.frame, text="Back", command=self.change_frame, bg="#ffc0ad", fg="#271c19", font=("dubai",10))
+        back_button = Button(self.frame, text="Back", command=self.change_frame, bg="#ffc0ad", fg="#271c19", font=("dubai",10), activebackground="#ffc0ad", activeforeground="#271c19")
         back_button.pack(pady=5)
 
     #functions (command)

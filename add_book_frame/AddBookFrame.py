@@ -44,7 +44,8 @@ class AddBook:
         self.menu.set("Select Genre ...")
         # Create a dropdown menu
         self.genre_drop = OptionMenu(self.frame, self.menu, "Fantasy", "Science Fiction", "Horror", "Mystery", "Romance", "Nonfiction", "Textbook")
-        self.genre_drop.config(bg="#ffc0ad", fg="#271c19", font=("dubai", 10))
+        self.genre_drop.config(bg="#ffc0ad", fg="#271c19", font=("dubai", 10), activebackground="#ffc0ad", activeforeground="#271c19")
+        self.genre_drop["menu"].config(bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
 
         # Packing the widgets in order of appearance
         self.notice.pack(pady=15)
@@ -64,8 +65,10 @@ class AddBook:
         self.spacer.pack()
 
         # Buttons to submit and go back
-        self.submit_button = Button(self.frame, text='Submit', command=self.submit_action, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
-        self.back_button = Button(self.frame, text='Back', command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")  # hide add_book frame and show main frame
+        self.submit_button = Button(self.frame, text='Submit', command=self.submit_action, font=("dubai", 10),
+                                    bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
+        self.back_button = Button(self.frame, text='Back', command=self.change_frame, font=("dubai", 10), bg="#ffc0ad",
+                                  fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.submit_button.pack()
         self.back_button.pack()
 

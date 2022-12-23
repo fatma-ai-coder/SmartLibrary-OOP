@@ -57,11 +57,11 @@ class ReturnBook:
         
         #the submission widget
         # the submit button
-        self.submit_button = Button(self.frame, text="Submit", command=self.submit, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        self.submit_button = Button(self.frame, text="Submit", command=self.submit, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.submit_button.pack(pady=3)
                   
         # the back button                
-        self.back_button = Button(self.frame, text='Back', command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19")
+        self.back_button = Button(self.frame, text='Back', command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.back_button.pack()
 
     # change the frame when the back button is clicked

@@ -27,11 +27,11 @@ class Login:
         self.password_text.pack(pady=5)
         
         #pasword entry
-        self.pass_entry = Entry(self.frame, show='*', width=25, font=('dubai', 13), )
+        self.pass_entry = Entry(self.frame, show='*', width=25, font=('dubai', 13))
         self.pass_entry.pack(pady=5)
         
         #Login_verfy_button
-        self.login_button = Button(self.frame, text="Login",fg="#271c19", bg="#ffc0ad", font=('dubai', 13, 'bold'), width=25,command=self.login_verfy)
+        self.login_button = Button(self.frame, text="Login",fg="#271c19", bg="#ffc0ad", font=('dubai', 13, 'bold'), width=25,command=self.login_verfy, activebackground="#ffc0ad", activeforeground="#271c19")
         self.login_button.pack(pady=5)
 
 
