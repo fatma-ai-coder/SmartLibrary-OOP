@@ -11,3 +11,5 @@
 {"title": "One of Us Is Lying", "genre": "Mystery", "isbn": 9670000523, "authors": ["Karen McManus"], "stock": 2}
 {"title": "Philomel Cottage", "genre": "Horror", "isbn": 9600045237, "authors": ["Agatha Christie"], "stock": 12}
 {"title": "Koala Bear Hugs", "genre": "Fantasy", "isbn": 9720054800, "authors": ["Talah Nasir"], "stock": 8}
+{"title": "We Hunt the Flame", "genre": "Fantasy", "isbn": 9780000245, "authors": ["Hafsah Faizal"], "stock": 9}
+{"title": "Pride and Prejudice", "genre": "Romance", "isbn": 9780140430721, "authors": ["Jane Austen"], "stock": 11}
