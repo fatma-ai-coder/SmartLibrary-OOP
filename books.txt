@@ -1,11 +1,13 @@
-{"title": "asdfghjk", "genre": "Horror", "isbn": 1234567890, "authors": ["bvhjbknm"], "stock": 7}
-{"title": "jhgjkjh;fx", "genre": "Mystery", "isbn": 9876543210, "authors": ["hzxgjchvb", "dxchvjb"], "stock": 4}
-{"title": "Harry Potter", "genre": "Fantasy", "isbn": 5243682929, "authors": ["J. K. Rowling"], "stock": 6}
-{"title": "gfyukg.", "genre": "Horror", "isbn": 2345678765432, "authors": ["awwesrdtfygu", "rfcfgb"], "stock": 7}
-{"title": "saasdfghbjkl", "genre": "Mystery", "isbn": 1234567890, "authors": ["xfdhdgjm"], "stock": 6}
-{"title": "hgzvfb", "genre": "Mystery", "isbn": 1234567654, "authors": ["jhzfgj"], "stock": 4}
-{"title": "asdfghj", "genre": "Fantasy", "isbn": 1346798063, "authors": ["kgjh"], "stock": 20}
-{"title": "hggkj", "genre": "Horror", "isbn": 6000700033, "authors": ["vjb"], "stock": 70}
-{"title": "dghhdn", "genre": "Romance", "isbn": 1425364685969, "authors": ["asdfghjgfd", "wefgh", "yugchvb", "bjk"], "stock": 36}
-{"title": "hello", "genre": "Mystery", "isbn": 4354657687, "authors": ["hey", "hi", "hello", "oy"], "stock": 80}
-{"title": "adfgjn", "genre": "Science Fiction", "isbn": 1325534657687, "authors": ["ajin"], "stock": 60}
+{"title": "Harry Potter and the Deathly Hallows", "genre": "Fantasy", "isbn": 5243682929, "authors": ["J. K. Rowling"], "stock": 6}
+{"title": "Foreshadow", "genre": "Science Fiction", "isbn": 9705896124, "authors": ["Leena Althekair"], "stock": 16}
+{"title": "The Hobbit", "genre": "Fantasy", "isbn": 9705366800, "authors": ["J. R. R. Tolkien"], "stock": 3}
+{"title": "Renegades", "genre": "Fantasy", "isbn": 9700023587700, "authors": ["Marissa Meyer"], "stock": 1}
+{"title": "The Unhoneymooners", "genre": "Romance", "isbn": 9735540000, "authors": ["Christine Lauren"], "stock": 2}
+{"title": "Peercy Jackson: The Labyrinth", "genre": "Fantasy", "isbn": 9870025996001, "authors": ["Rick Riordan"], "stock": 5}
+{"title": "Organic and Biochemistry Essentials", "genre": "Textbook", "isbn": 9708562417, "authors": ["G. E. Tyson", "L. Marissa", "P. Peterson"], "stock": 2}
+{"title": "Becoming Michelle", "genre": "Nonfiction", "isbn": 9705841000, "authors": ["Michelle Obama"], "stock": 5}
+{"title": "The Seven Habits", "genre": "Nonfiction", "isbn": 9604875222010, "authors": ["Sean Covey"], "stock": 4}
+{"title": "The Spanish Love Deception", "genre": "Romance", "isbn": 9740008500, "authors": ["Catalina Gonzales"], "stock": 6}
+{"title": "One of Us Is Lying", "genre": "Mystery", "isbn": 9670000523, "authors": ["Karen McManus"], "stock": 2}
+{"title": "Philomel Cottage", "genre": "Horror", "isbn": 9600045237, "authors": ["Agatha Christie"], "stock": 12}
+{"title": "Koala Bear Hugs", "genre": "Fantasy", "isbn": 9720054800, "authors": ["Talah Nasir"], "stock": 8}
