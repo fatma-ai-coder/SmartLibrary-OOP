@@ -9,41 +9,41 @@ class AddBook:
     # This starts once the class is called
     def __init__(self, window, main):
         # Frame details
-        self.frame = Frame(window, width=400, height=400)
+        self.frame = Frame(window, width=400, height=400, bg='#55423d')
         self.main = main
         self.root = window
 
         # Change the title to Add Book
-        self.root.title("Add book")
+        self.root.title("Add Book")
 
         # Entry boxes in variables
-        self.title = Entry(self.frame, width=30)
-        self.genre = Entry(self.frame, width=30)
-        self.isbn = Entry(self.frame, width=30)
-        self.author1 = Entry(self.frame, width=30)
-        self.author2 = Entry(self.frame, width=30)
-        self.author3 = Entry(self.frame, width=30)
-        self.author4 = Entry(self.frame, width=30)
-        self.stock = Entry(self.frame, width=30)
+        self.title = Entry(self.frame, width=30, font='Dubai 10')
+        self.genre = Entry(self.frame, width=30, font='Dubai 10')
+        self.isbn = Entry(self.frame, width=30, font='Dubai 10')
+        self.author1 = Entry(self.frame, width=30, font='Dubai 10')
+        self.author2 = Entry(self.frame, width=30, font='Dubai 10')
+        self.author3 = Entry(self.frame, width=30, font='Dubai 10')
+        self.author4 = Entry(self.frame, width=30, font='Dubai 10')
+        self.stock = Entry(self.frame, width=30, font='Dubai 10')
 
         # Notice that all fields are mandatory
-        self.notice = Label(self.frame, text='Please note that all fields are mandatory.')
+        self.notice = Label(self.frame, text='Please note that all fields are mandatory.', font='Dubai 16 bold',
+                            fg='#fffffe', bg='#55423d')
 
         # Labels above the entry boxes
-        self.title_label = Label(self.frame, text='Title:')
-        self.genre_label = Label(self.frame, text='Genre:')
-        self.isbn_label = Label(self.frame, text='ISBN:')
-        self.authors_label = Label(self.frame, text='Author(s): (max. 4)')
-        self.stock_label = Label(self.frame, text='Stock')
-
-        # Empty labels to create a space between the entries and buttons for better appearance
-        self.spacer = Label(self.frame)
+        self.title_label = Label(self.frame, text='Title:', font='Dubai 12', fg='#fff3ec', bg='#55423d')
+        self.genre_label = Label(self.frame, text='Genre:', font='Dubai 12', fg='#fff3ec', bg='#55423d')
+        self.isbn_label = Label(self.frame, text='ISBN:', font='Dubai 12', fg='#fff3ec', bg='#55423d')
+        self.authors_label = Label(self.frame, text='Author(s): (max. 4)', font='Dubai 12', fg='#fff3ec', bg='#55423d')
+        self.stock_label = Label(self.frame, text='Stock', font='Dubai 12', fg='#fff3ec', bg='#55423d')
 
         # Set the menu initially
         self.menu = StringVar()
         self.menu.set("Select Genre ...")
         # Create a dropdown menu
         self.genre_drop = OptionMenu(self.frame, self.menu, "Fantasy", "Science Fiction", "Horror", "Mystery", "Romance", "Nonfiction")
+        self.genre_drop.config(bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19", font='Dubai 10')
+        self.genre_drop["menu"].config(bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19", font='Dubai 10')
 
         # Packing the widgets in order of appearance
         self.notice.pack(pady=15)
@@ -60,13 +60,14 @@ class AddBook:
         self.author4.pack()
         self.stock_label.pack()
         self.stock.pack()
-        self.spacer.pack()
 
         # Buttons to submit and go back
-        self.submit_button = Button(self.frame, text='Submit', command=self.submit_action)
-        self.back_button = Button(self.frame, text='Back', command=self.change_frame)  # hide add_book frame and show main frame
-        self.submit_button.pack()
-        self.back_button.pack()
+        self.submit_button = Button(self.frame, text='Submit', command=self.submit_action, font='Dubai 12', fg='#271c19',
+                                    bg='#ffc0ad', activebackground="#ffc0ad", activeforeground="#271c19")
+        self.back_button = Button(self.frame, text='Back', command=self.change_frame, font='Dubai 12', fg='#271c19',
+                                  bg='#ffc0ad', activebackground="#ffc0ad", activeforeground="#271c19")
+        self.submit_button.pack(pady=5)
+        self.back_button.pack(pady=5)
 
     def change_frame(self):
         self.frame.pack_forget()

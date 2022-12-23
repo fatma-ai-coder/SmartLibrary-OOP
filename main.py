@@ -17,7 +17,7 @@ def main():
     y = (screen_height/2) - (window_height/2)
 
     root.geometry(f"{window_width}x{window_height}+{int(x)}+{int(y)}")
-    root.config(bg="pink")
+    root.config(bg='#55423d')
     
     main_frame = MainMenu(root)
     login_frame = Login(root, main_frame)

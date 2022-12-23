@@ -1,2 +1,4 @@
-{"title": "asdfghjk", "genre": "Horror", "isbn": 1234567890, "authors": ["bvhjbknm"], "stock": 7}
-{"title": "jhgjkjh;fx", "genre": "Mystery", "isbn": 9876543210, "authors": ["hzxgjchvb", "dxchvjb"], "stock": 4}
+
+{"title": "Foreshadow", "genre": "Science Fiction", "isbn": 9786030264490, "authors": ["Leena Althekair"], "stock": 4}
+{"title": "The Hobbit", "genre": "Fantasy", "isbn": 9780044403371, "authors": ["J.R.R. Tolkien"], "stock": 2}
+{"title": "Fantastic Mr. Fox", "genre": "Fantasy", "isbn": 9780140326710, "authors": ["Roald Dahl"], "stock": 4}

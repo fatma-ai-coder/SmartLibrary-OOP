@@ -1,16 +1,18 @@
 from tkinter import *
 import json
 
- #Display Frame
+
+#Display Frame
 class DisplayBooks:
     def __init__(self, root, main):
         self.root = root
         self.root.title("Display Available Books")
         self.main = main
-        self.frame = Frame(self.root, width=500, height=500)
+        self.frame = Frame(self.root, width=500, height=500, bg='#55423d')
         self.frame.pack()
 
-        display_text = Label(self.frame, text="Here are the Books we have!!", font=('Poppins 12'))
+        display_text = Label(self.frame, text="Here are the Books we have!", font='Dubai 16 bold', fg='#fffffe',
+                             bg='#55423d')
         display_text.pack(pady=5)
 
         #sort_text = Label(self.frame, text="%-20s%-15s%-10s%-5s" % ('Title', 'Author', 'ISBN', "Q"), bg='white',fg='black')
