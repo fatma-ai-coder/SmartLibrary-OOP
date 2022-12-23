@@ -2,7 +2,9 @@ from tkinter import *
 from LoginFrame import Login
 from MainMenu import MainMenu
 
+
 def main():
+
     root = Tk()
 
     window_width = 600
@@ -19,13 +21,9 @@ def main():
     
     main_frame = MainMenu(root)
     login_frame = Login(root, main_frame)
-    
-    root.title("Login")
     login_frame.frame.pack()
-    
-    
-    
-    
+
     root.mainloop()
- 
+
+
 main()

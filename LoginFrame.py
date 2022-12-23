@@ -7,6 +7,7 @@ class Login:
         self.frame = Frame(root, width=150, height=200, bg="white")
         self.main = main
         self.root = root
+        self.root.title("Login")
 
 
         #login_page

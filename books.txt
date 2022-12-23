@@ -1,0 +1,2 @@
+{"title": "asdfghjk", "genre": "Horror", "isbn": 1234567890, "authors": ["bvhjbknm"], "stock": 7}
+{"title": "jhgjkjh;fx", "genre": "Mystery", "isbn": 9876543210, "authors": ["hzxgjchvb", "dxchvjb"], "stock": 4}

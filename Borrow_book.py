@@ -1,16 +1,15 @@
 from tkinter import *
-#from PIL import ImageTk, Image
 from tkcalendar import *
 from tkinter import messagebox
 
-root = Tk()
 
-class Borrow_Book:
-    def __init__(self, root):
-        
-        
+class BorrowBook:
+    def __init__(self, root, main):
         self.frame = Frame(root, width=510, height=500, bg="white")
         self.frame.pack()
+        self.root = root
+        self.root.title("Borrow Book")
+        self.main = main
                 
         self.heading_window = Label(self.frame, text="Borrow Books from the Library", font=('arial', 13, 'bold'))
         self.heading_window.pack(pady=5)
@@ -49,13 +48,15 @@ class Borrow_Book:
 
         self.return_date = Label(self.frame, text='Return Date ',  font=("Ivy 9 bold"))
         self.return_date.pack(pady=10)
-    
-        
-            
+
         self.borrow = Label(self.frame, text=' Borrow ',  font=("Ivy 9 bold"))
         self.borrow2 = Button(self.frame, text= 'Borrow',width=25, font=("", 15))
         self.borrow.pack()
-        self.borrow2.pack()    
-             
-obj = Borrow_Book(root)
-root.mainloop()
+        self.borrow2.pack()
+
+        self.back_button = Button(self.frame, text="Back", command=self.change_frame)
+        self.back_button.pack(pady=5)
+    def change_frame(self):
+        self.frame.pack_forget()
+        self.main.pack()
+        self.root.title("Library System")

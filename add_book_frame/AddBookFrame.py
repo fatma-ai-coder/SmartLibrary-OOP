@@ -11,6 +11,10 @@ class AddBook:
         # Frame details
         self.frame = Frame(window, width=400, height=400)
         self.main = main
+        self.root = window
+
+        # Change the title to Add Book
+        self.root.title("Add book")
 
         # Entry boxes in variables
         self.title = Entry(self.frame, width=30)
@@ -67,6 +71,8 @@ class AddBook:
     def change_frame(self):
         self.frame.pack_forget()
         self.main.pack()
+        self.root.title("Library System")
+
 
 
     # The command when the "Submit" button is pressed
