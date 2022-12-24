@@ -7,8 +7,8 @@ class DisplayBooks:
     def __init__(self, root, main):
         self.root = root
         self.main = main
-        self.info_frame = Frame(self.frame, width=300, height=300, bg="#55423d")
         self.frame = Frame(self.root, width=600, height=500, bg="#55423d")
+        self.info_frame = Frame(self.frame, width=300, height=300, bg="#55423d")
         self.frame.pack()
         
         # change the title
@@ -68,7 +68,7 @@ class DisplayBooks:
     def display_info(self):
         self.info_frame.pack()
         try:
-            index = self.test_list.curselection()[0]
+            index = self.displayed_books.curselection()[0]
         
             self.book_title.config(text="Title: " + str(self.books[index]["title"]), bg="#55423d", fg="#fff3ec", font=("dubai", 10))
             self.book_title.pack(pady=5)
