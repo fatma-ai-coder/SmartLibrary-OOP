@@ -49,7 +49,8 @@ class BorrowBook:
         self.cal.pack() 
         
         # The button that displays the date
-        self.return_date2 = Button(self.frame, text="Return Data", command=get_date, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
+        self.return_date2 = Button(self.frame, text="Return Data", command=get_date, font=("dubai", 10), bg="#ffc0ad",
+                                   fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.return_date2.pack()
 
         # The label where the date will be displayed when return_date2 is clicked
@@ -57,11 +58,13 @@ class BorrowBook:
         self.return_date.pack(pady=10)
 
         # the borrow button
-        self.borrow = Button(self.frame, text= 'Borrow',width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19", command=self.borrow_book)
+        self.borrow = Button(self.frame, text='Borrow', width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19",
+                             activebackground="#ffc0ad", activeforeground="#271c19", command=self.borrow_book)
         self.borrow.pack()
 
         # The back button that changes the frame to the main menu frame
-        self.back_button = Button(self.frame, text="Back", command=self.change_frame, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
+        self.back_button = Button(self.frame, text="Back", command=self.change_frame, font=("dubai", 10), bg="#ffc0ad",
+                                  fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         self.back_button.pack(pady=5)
         
     # This function changes the frame from the current to the main frame
@@ -74,6 +77,5 @@ class BorrowBook:
         # check if any field is empty
         if self.id2.get() == "" or self.borrow_name2.get() == "" or self.book_name2.get() == "" or self.isbn2.get() == "":
             messagebox.showerror("Error", "Please fill all the missing fields")
-
         else:
             messagebox.showinfo("Book Borrowed", "The book has been borrowed successfully")
