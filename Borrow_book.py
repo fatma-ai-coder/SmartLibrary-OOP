@@ -57,7 +57,7 @@ class BorrowBook:
         self.return_date.pack(pady=10)
 
         # the borrow button
-        self.borrow = Button(self.frame, text= 'Borrow',width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
+        self.borrow = Button(self.frame, text= 'Borrow',width=25, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19", command=self.borrow_book)
         self.borrow.pack()
 
         # The back button that changes the frame to the main menu frame
@@ -69,3 +69,11 @@ class BorrowBook:
         self.frame.pack_forget()
         self.main.pack()
         self.root.title("Library System")
+
+    def borrow_book(self):
+        # check if any field is empty
+        if self.id2.get() == "" or self.borrow_name2.get() == "" or self.book_name2.get() == "" or self.isbn2.get() == "":
+            messagebox.showerror("Error", "Please fill all the missing fields")
+
+        else:
+            messagebox.showinfo("Book Borrowed", "The book has been borrowed successfully")

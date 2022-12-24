@@ -25,10 +25,10 @@ def main():
     
     root.config(bg="#55423d")
     
-    # Instanciate the main menu frame
+    # Instantiate the main menu frame
     main_frame = MainMenu(root)
     
-    # Instanciate the Login frame
+    # Instantiate the Login frame
     login_frame = Login(root, main_frame)
     login_frame.frame.pack()
 
