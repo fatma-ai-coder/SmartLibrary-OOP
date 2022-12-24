@@ -6,12 +6,15 @@ from tkinter import messagebox
 class DisplayBooks:
     def __init__(self, root, main):
         self.root = root
-        self.root.title("Display Available Books")
         self.main = main
+        self.info_frame = Frame(self.frame, width=300, height=300, bg="#55423d")
         self.frame = Frame(self.root, width=600, height=500, bg="#55423d")
         self.frame.pack()
-        self.info_frame = Frame(self.frame, width=300, height=300, bg="#55423d")
         
+        # change the title
+        self.root.title("Display Available Books")
+        
+        # The book description labels
         self.book_number = Label(self.info_frame)
         self.book_title = Label(self.info_frame)
         self.authors = Label(self.info_frame)
@@ -19,39 +22,49 @@ class DisplayBooks:
         self.stock = Label(self.info_frame)
         self.space = Label(self.info_frame, bg="#55423d")
 
+        # the heading label
         display_text = Label(self.frame, text="Here are the books we have!", font=('Dubai', 13), fg="#fffffe", bg="#55423d")
         display_text.pack(pady=5)
-
+        
+        # open Books.txt file and get the information
         file = open("Books.txt", "r")
         self.books = file.readlines()
         for i in range(len(self.books)):
             self.books[i] = json.loads(self.books[i])
         
+        # the scroll widget to see the books beyond the ones currently displayed
         scroll = Scrollbar(self.frame)
         scroll.pack(side="right", fill=Y)
         
-        self.test_list = Listbox(self.frame, yscrollcommand=scroll.set, selectmode="single")
+        # the books will be displayed in the listbox
+        self.displayed_books = Listbox(self.frame, yscrollcommand=scroll.set, selectmode="single")
 
+        # add the books to the list box
         for book in self.books:
-            
-            self.test_list.insert(END, book["title"])
+            self.displayed_books.insert(END, book["title"])
             
         file.close()
-        self.test_list.pack(side="left")
-        scroll.config(command=self.test_list.yview)
+        
+        # adjust the side for the list box
+        self.displayed_books.pack(side="left")
+        scroll.config(command=self.displayed_books.yview)
 
+        # the display button
         dis_but = Button(self.frame, text="Enter", command=self.display_info, font=("dubai", 10), bg="#ffc0ad", fg="#271c19", activebackground="#ffc0ad", activeforeground="#271c19")
         dis_but.pack(pady=5)
 
+        # the back button
         back_button = Button(self.frame, text="Back", command=self.change_frame, bg="#ffc0ad", fg="#271c19", font=("dubai",10), activebackground="#ffc0ad", activeforeground="#271c19")
         back_button.pack(pady=5)
 
     #functions (command)
+    # change the frame to the main frame
     def change_frame(self):
         self.frame.pack_forget()
         self.main.pack()
         self.root.title("Library System")
         
+    # show the information in the info_frame 
     def display_info(self):
         self.info_frame.pack()
         try:
