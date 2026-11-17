@@ -24,3 +24,12 @@ SmartLibrary-OOP is a comprehensive library management system developed using Ob
 - `ReturnFrame.py` — Handles book return processes.
 - `MainMenu.py` — Main menu interface to navigate the system.
 
+### How to Run
+
+Needs Python 3 (Tkinter comes with it). No other packages.
+
+```bash
+python main.py
+```
+
+Demo login: username `admin`, password `admin`. Books are saved in `books.txt`.
